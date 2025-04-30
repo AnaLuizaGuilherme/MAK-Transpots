@@ -1,24 +1,22 @@
-from flask import Flask, request, jsonify
-from algoritmos.dijkstra import calcular_caminho
 
-# Criação da aplicação Flask
+from flask import Flask, request, jsonify
+from roteirizador import gerar_rota_completa
+
 app = Flask(__name__)
 
-# Rota raiz para teste de funcionamento da API
-@app.route("/")
-def index():
-    return "API de Roteirização Ativa!"
-
-# Endpoint principal: recebe grafo e origem, retorna rota com Dijkstra
 @app.route("/rota", methods=["POST"])
 def rota():
-    dados = request.get_json()  # Recebe JSON com grafo e ponto inicial
-    grafo = dados["grafo"]
-    origem = dados["origem"]
-    resultado = calcular_caminho(grafo, origem)  # Executa algoritmo
-    return jsonify({"rota": resultado})  # Retorna resultado como JSON
+    dados = request.get_json()
+    bairro = dados.get("bairro")
 
-# Executa o servidor localmente em modo debug
+    if not bairro:
+        return jsonify({"erro": "bairro não informado"}), 400
+
+    try:
+        rota_final = gerar_rota_completa(bairro)
+        return jsonify({"bairro": bairro, "rota": rota_final})
+    except Exception as e:
+        return jsonify({"erro": str(e)}), 500
+
 if __name__ == "__main__":
     app.run(debug=True)
-    

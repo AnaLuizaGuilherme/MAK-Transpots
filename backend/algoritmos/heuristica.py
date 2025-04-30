@@ -1,12 +1,9 @@
-# Define uma pontuação de prioridade para cada entrega
-# A entrega com maior score será considerada a mais urgente
+from datetime import datetime
 
-def calcular_prioridade(entrega):
-    score = 0
-    if entrega.get("tipo") == "urgente":
-        score += 10
-    if entrega.get("cliente_especial", False):
-        score += 5
-    if entrega.get("prazo_entrega", 999) < 30:
-        score += 3
+# Calcula score com base na proximidade da data de entrega
+def calcular_prioridade_data(entrega):
+    hoje = datetime.now()
+    data_entrega = datetime.strptime(entrega["data_entrega"], "%Y-%m-%d")
+    dias_para_entrega = (data_entrega - hoje).days
+    score = max(0, 30 - dias_para_entrega)  # Quanto mais perto, maior o score
     return score
