@@ -2,6 +2,7 @@
 import json
 from prioridade import encontrar_entrega_prioritaria
 from genetico import algoritmo_genetico
+from database.connection import salvar_rota
 
 # Lê o JSON e retorna as entregas de um bairro específico
 def carregar_entregas_do_bairro(bairro, caminho_json="data/lugares.json"):
@@ -19,10 +20,15 @@ def gerar_rota_completa(bairro):
     entregas = carregar_entregas_do_bairro(bairro)
     if not entregas:
         raise ValueError("Nenhuma entrega encontrada para o bairro informado.")
+    
     ids = list(range(len(entregas)))
     matriz = gerar_matriz_simulada(entregas)
     ponto_prioritario = encontrar_entrega_prioritaria(entregas)
     ids.remove(ponto_prioritario)
     rota_ordenada = algoritmo_genetico(ids, matriz)
     rota_final = [ponto_prioritario] + rota_ordenada
+
+    # Salvar a rota no banco
+    salvar_rota(bairro, rota_final, ponto_prioritario)
+    
     return rota_final
