@@ -1,0 +1,36 @@
+
+# Byte-compiled / optimized / DLL files
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite database
+
+*.db
+
+# Virtual environment
+
+venv/
+.env/
+
+# VS Code config
+
+.vscode/
+
+# Mac OS
+
+.DS_Store
+
+# Logs
+
+*.log
+
+# JSON de dados reais (se for sigiloso)
+
+data/*.json
+!data/lugares.json
+
+# Sistema
+
+*.swp
