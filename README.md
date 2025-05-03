@@ -26,7 +26,7 @@ Limite de **10 entregas por caminhão**, cada um atendendo um bairro diferente.
 
 **Diagrama da Arquitetura!**
 
-![image](https://github.com/user-attachments/assets/7e384fb9-2870-448a-b5ad-f6a081e6b740)
+![image](https://github.com/user-attachments/assets/59a5c4dd-d20a-4cdd-88ee-e8d28f1101f0)
 
 
 ---
