@@ -8,6 +8,7 @@ Este projeto simula um sistema de otimização de rotas para entregas urbanas. U
 ## 📌 Objetivo
 
 Calcular a **menor rota possível** para pontos de entrega pré-estabelecidos, usando:
+
 - Algoritmo de Dijkstra (obrigatório)
 - Heurística por tipo e data
 - Algoritmo Genético para otimização de sequência
