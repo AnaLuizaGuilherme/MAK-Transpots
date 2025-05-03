@@ -10,7 +10,7 @@ Este projeto simula um sistema de otimização de rotas para entregas urbanas. U
 Calcular a **menor rota possível** para pontos de entrega pré-estabelecidos, usando:
 
 - Algoritmo de Dijkstra (obrigatório)
-- Heurística por tipo e data
+- Heurística para identificar entregas prioritárias por tipo e data
 - Algoritmo Genético para otimização de sequência
 
 Limite de **10 entregas por caminhão**, cada um atendendo um bairro diferente.
@@ -24,7 +24,10 @@ Limite de **10 entregas por caminhão**, cada um atendendo um bairro diferente.
 - **Dados:** JSON para simulação, SQLite para histórico
 - **Algoritmos:** Heurística, Genético, Dijkstra
 
-![Diagrama da Arquitetura](diagrama_arquitetura.png)
+**Diagrama da Arquitetura!**
+
+![image](https://github.com/user-attachments/assets/7e384fb9-2870-448a-b5ad-f6a081e6b740)
+
 
 ---
 
@@ -88,4 +91,4 @@ Retorna o histórico das rotas geradas.
 
 ## 📄 Licença
 
-Este projeto é de uso educacional. Desenvolvido por Na ❤️ com suporte do chatzinho.
+Este projeto é de uso educacional. Desenvolvido por Ana Luiza Guilherme, Kayky Oliveira e Murillo Rodrigues com orientação da professora Andrea Ono Sakai e suporte do ChatGPT.
