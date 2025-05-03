@@ -14,7 +14,7 @@ Calcular a **menor rota possível** para pontos de entrega pré-estabelecidos, u
 - Algoritmo Genético para otimização de sequência
 
 Limite de **10 entregas por caminhão**, cada um atendendo um bairro diferente.
-
+ 
 ---
 
 ## 🧠 Arquitetura do Sistema
