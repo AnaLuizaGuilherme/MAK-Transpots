@@ -14,7 +14,7 @@ Calcular a **menor rota possível** para pontos de entrega pré-estabelecidos, u
 - Algoritmo Genético para otimização de sequência
 
 Limite de **10 entregas por caminhão**, cada um atendendo um bairro diferente.
- 
+
 ---
 
 ## 🧠 Arquitetura do Sistema
@@ -28,12 +28,11 @@ Limite de **10 entregas por caminhão**, cada um atendendo um bairro diferente.
 
 ![image](https://github.com/user-attachments/assets/59a5c4dd-d20a-4cdd-88ee-e8d28f1101f0)
 
-
 ---
 
 ## 🗃️ Estrutura do Projeto
 
-```
+```bash
 /backend
 ├── app.py                   # API principal
 ├── roteirizador.py          # Geração de rotas (3 caminhões)
@@ -56,10 +55,13 @@ Limite de **10 entregas por caminhão**, cada um atendendo um bairro diferente.
 
 1. Clone este repositório
 2. Instale as dependências:
+
 ```bash
 pip install -r requirements.txt
 ```
-3. Inicie o servidor:
+
+1. Inicie o servidor:
+
 ```bash
 python app.py
 ```
@@ -69,7 +71,9 @@ python app.py
 ## 🔗 Endpoints da API
 
 ### `POST /rota`
+
 Calcula a rota para até 3 caminhões.
+
 ```json
 {
   "bairros": ["Jardim São Paulo", "Braz Cubas", "Vila Oliveira"]
@@ -77,6 +81,7 @@ Calcula a rota para até 3 caminhões.
 ```
 
 ### `GET /historico`
+
 Retorna o histórico das rotas geradas.
 
 ---
